@@ -18,11 +18,11 @@ typedef struct linkNode {
 
 LinkNode *createLinkNode(int linkNum);
 
-void insertLinkNode(LinkNode *headNode,LinkNode *tobeInsertedNode,LinkNode *node);
-
 void appendLinkNode(LinkNode *headNode, LinkNode *node);
 
 void printLinkNode(LinkNode *headLinkNode);
+
+void reverseLinkNode(LinkNode *headNode);
 
 
 #endif /* LinkList_h */

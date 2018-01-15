@@ -17,7 +17,8 @@ int main(int argc, const char * argv[]) {
     LinkNode *tobeAppendNode = malloc(sizeof(LinkNode));
     tobeAppendNode->data = 5;
     tobeAppendNode->next = NULL;
-    appendLinkNode(headNode, tobeAppendNode);
+//    appendLinkNode(headNode, tobeAppendNode);
+    reverseLinkNode(headNode);
     printLinkNode(headNode);
     return 0;
 }

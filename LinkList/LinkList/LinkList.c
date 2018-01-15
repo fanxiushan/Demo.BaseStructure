@@ -15,24 +15,10 @@ LinkNode *createLinkNode(int linkNum) {
     for (int i = 0; i < linkNum; i++) {
         tLinkNode->next = malloc(sizeof(LinkNode));
         tLinkNode->next->data = i;
+        tLinkNode->next->next = NULL;
         tLinkNode = tLinkNode->next;
     }
     return headNode;
-}
-
-void insertLinkNode(LinkNode *headNode,LinkNode *tobeInsertedNode,LinkNode *node) {
-    if (headNode->next == tobeInsertedNode) {
-        headNode->next = node;
-        node->next = tobeInsertedNode;
-    }
-    else if (tobeInsertedNode->next == NULL) {
-        tobeInsertedNode->next = node;
-        node->next = NULL;
-    }
-    else {
-        node->next = tobeInsertedNode->next;
-        tobeInsertedNode->next = node;
-    }
 }
 
 void appendLinkNode(LinkNode *headNode, LinkNode *node) {
@@ -56,3 +42,18 @@ void printLinkNode(LinkNode *headLinkNode) {
         tLinkNode = tLinkNode->next;
     }
 }
+
+void reverseLinkNode(LinkNode *headNode) {
+    LinkNode *t = headNode->next;
+    LinkNode *next = NULL;
+    LinkNode *prev = NULL;
+    while (t->next) {
+        next = t->next;
+        t->next = prev;
+        prev = t;
+        t = next;
+    }
+    t->next = prev;
+    headNode->next = t;
+}
+
