@@ -24,5 +24,7 @@ void printLinkNode(LinkNode *headLinkNode);
 
 void reverseLinkNode(LinkNode *headNode);
 
+LinkNode *findMiddleLinkNode(LinkNode *headNode);
+
 
 #endif /* LinkList_h */

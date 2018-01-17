@@ -20,5 +20,7 @@ int main(int argc, const char * argv[]) {
 //    appendLinkNode(headNode, tobeAppendNode);
     reverseLinkNode(headNode);
     printLinkNode(headNode);
+    LinkNode *middleNode = findMiddleLinkNode(headNode);
+    printf("middleNode = %d\n",middleNode->data);
     return 0;
 }

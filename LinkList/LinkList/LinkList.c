@@ -57,3 +57,18 @@ void reverseLinkNode(LinkNode *headNode) {
     headNode->next = t;
 }
 
+LinkNode *findMiddleLinkNode(LinkNode *headNode) {
+    LinkNode *t = headNode;
+    LinkNode *m = headNode;
+    int i = 0;
+    while (t) {
+        t = t->next;
+        i = i+1;
+        if (i%2 == 0) {
+            m = m->next;
+        }
+    }
+    return m;
+}
+
+
