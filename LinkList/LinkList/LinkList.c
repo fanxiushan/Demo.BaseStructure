@@ -21,13 +21,24 @@ LinkNode *createLinkNode(int linkNum) {
     return headNode;
 }
 
+LinkNode *lastLinkNode(LinkNode *headNode) {
+    LinkNode *tNode= headNode ? headNode->next : NULL;
+    while (tNode != NULL) {
+        if (tNode->next == NULL) {
+            break;
+        } else{
+            tNode = tNode->next;
+        }
+    }
+    return tNode;
+}
+
 void appendLinkNode(LinkNode *headNode, LinkNode *node) {
     LinkNode *tNode= headNode ? headNode->next : NULL;
     while (tNode != NULL) {
         if (tNode->next == NULL) {
             break;
-        }
-        else{
+        } else{
             tNode = tNode->next;
         }
     }
@@ -69,6 +80,34 @@ LinkNode *findMiddleLinkNode(LinkNode *headNode) {
         }
     }
     return m;
+}
+
+int isCircleExist(LinkNode *head) {
+    if (head->next == NULL) {
+        return 0;
+    }
+    LinkNode *singleStep = head->next;
+    LinkNode *doubleStep = head->next;
+    int haveCircle = 0;
+    while (doubleStep->next != NULL) {
+        if (singleStep->next) {
+            singleStep = singleStep->next;
+        } else {
+            haveCircle = 0;
+            break;
+        }
+        if (doubleStep->next->next) {
+            doubleStep = doubleStep->next->next;
+        } else {
+            haveCircle = 0;
+            break;
+        }
+        if (singleStep == doubleStep) {
+            haveCircle = 1;
+            break;
+        }
+    }
+    return haveCircle;
 }
 
 

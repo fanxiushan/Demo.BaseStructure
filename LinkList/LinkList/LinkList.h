@@ -18,6 +18,8 @@ typedef struct linkNode {
 
 LinkNode *createLinkNode(int linkNum);
 
+LinkNode *lastLinkNode(LinkNode *headNode);
+
 void appendLinkNode(LinkNode *headNode, LinkNode *node);
 
 void printLinkNode(LinkNode *headLinkNode);
@@ -25,6 +27,8 @@ void printLinkNode(LinkNode *headLinkNode);
 void reverseLinkNode(LinkNode *headNode);
 
 LinkNode *findMiddleLinkNode(LinkNode *headNode);
+
+int isCircleExist(LinkNode *head);
 
 
 #endif /* LinkList_h */
